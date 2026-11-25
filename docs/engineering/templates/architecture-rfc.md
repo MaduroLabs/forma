@@ -1,6 +1,7 @@
 # RFC: <title>
 
-- Status: `PROPOSED`
+- Status: `PROPOSED` / `UNDER_REVIEW` / `APPROVED` / `REJECTED` / `WITHDRAWN` / `SUPERSEDED`
+- RFC ID:
 - Owner:
 - Date:
 - Reviewers:
@@ -8,11 +9,15 @@
 
 ## Context
 
+## Decision required
+
 ## Goals
 
 ## Non-goals
 
 ## Alternatives considered
+
+## Trade-offs
 
 ## Proposed design
 
@@ -24,6 +29,10 @@
 
 ## Open questions
 
+## Acceptance criteria
+
 ## Approval requested
+
+Record the exact decision requested. Do not mark this RFC approved based on agent consensus.
 
 ## Verification plan

@@ -2,6 +2,8 @@
 
 The repository defines 13 project-scoped custom Codex agents under `.codex/agents/`. Each standalone TOML file uses the verified required fields `name`, `description`, and `developer_instructions`.
 
+The authoritative relationship between these agents and the 21 project skills is [the Agent–Skill Registry](skill-registry.md). The registry describes repository operating conventions and does not claim automatic native Codex selection.
+
 | Agent | Primary ownership |
 | --- | --- |
 | `core-engineering-lead` | Coordination, delegation, gates, consolidation, and milestone handoffs |
@@ -19,3 +21,11 @@ The repository defines 13 project-scoped custom Codex agents under `.codex/agent
 | `developer-experience-engineer` | SDK usability, examples, contributor onboarding, and documentation quality |
 
 Do not activate all agents for every task. The top-level session chooses the minimum set that materially improves the result.
+
+## Operating boundaries
+
+- The top-level session uses `core-context-management` and `core-orchestration` for substantive work.
+- `core-engineering-lead` is available when the host can select the named custom agent, but it is not an additional coordinator layer.
+- The parent session controls sandbox, credentials, external services, and approvals.
+- Review and research roles are read-only by instruction unless an explicit documentation/report write scope is assigned.
+- Every substantive assignment and completion report follows `docs/engineering/handoff-protocol.md`.

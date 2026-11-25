@@ -12,21 +12,28 @@ References: [Codex subagents](https://developers.openai.com/codex/subagents), [C
 
 ## Lifecycle
 
-1. Receive the Project Owner request.
-2. Load repository context, scope, non-goals, and approved decisions.
+1. Recover project context with `core-context-management`.
+2. Read the active milestone and classify the task.
 3. Define acceptance criteria, dependencies, write ownership, and approval gates.
 4. Delegate independent research or analysis where it materially improves quality.
 5. Consolidate alternatives and request human approval for material decisions.
 6. Create an implementation plan and assign disjoint ownership.
 7. Implement within scope.
-8. Run independent QA and code review; add security or performance review when relevant.
+8. Run independent QA and code review; add mandatory security, performance, cross-platform, or release review according to `quality-gates.md`.
 9. Resolve blocking findings and run final validation.
-10. Prepare and open a pull request targeting `main`.
+10. Use `core-git-workflow` to commit, push, and prepare or update a PR targeting `main`.
 11. Stop and wait for explicit human merge approval.
+12. After a reported merge, re-verify GitHub state, synchronize `main`, close the milestone, and stop unless further work is explicitly authorized.
 
 ## Parallel execution
 
 Parallelize independent research and reviews. Serialize implementation when ownership isolation is unavailable. Never let two agents edit the same files concurrently. Parent-mediated communication is the supported coordination pattern; repository handoff artifacts may preserve results between sessions.
+
+## Child lifecycle
+
+Each delegated task has a task ID and, when retried, an attempt ID. Record invocation mode, role instructions, write ownership, acceptance criteria, and required verification. Results use `COMPLETED`, `NEEDS_REVISION`, `BLOCKED`, `NEEDS_HUMAN_APPROVAL`, `CANCELLED`, or `TIMED_OUT`.
+
+Timeouts, cancellations, failures, partial results, stale results, duplicate results, and retries are not successful completion. Retry only safe, apparently recoverable operations, with bounded attempts. Reconcile result identity before consolidation and release execution slots when the runtime permits.
 
 ## Runtime limitation handling
 

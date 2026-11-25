@@ -4,7 +4,8 @@
 - Reviewer:
 - Diff or branch:
 - Scope reviewed:
-- Gate result: `PASS` / `NEEDS_REVISION` / `BLOCKED`
+- Gate result: `PASS` / `FAIL` / `NOT_APPLICABLE` / `NOT_RUN` / `BLOCKED`
+- Handoff state: `COMPLETED` / `NEEDS_REVISION` / `BLOCKED` / `NEEDS_HUMAN_APPROVAL` / `CANCELLED` / `TIMED_OUT`
 
 ## Findings
 

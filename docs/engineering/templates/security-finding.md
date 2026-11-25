@@ -3,7 +3,7 @@
 - Task ID:
 - Reviewer:
 - Scope:
-- Gate result:
+- Gate result: `PASS` / `FAIL` / `NOT_APPLICABLE` / `NOT_RUN` / `BLOCKED`
 
 ## Assets and trust boundaries
 

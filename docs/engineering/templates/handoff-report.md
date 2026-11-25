@@ -1,8 +1,10 @@
 # Agent handoff report
 
 - Task ID:
-- Agent identity:
-- Completion state: `COMPLETED` / `NEEDS_REVISION` / `BLOCKED` / `NEEDS_HUMAN_APPROVAL`
+- Attempt ID:
+- Agent identity or assigned role:
+- Invocation mode: `NAMED_CUSTOM_AGENT` / `GENERIC_NATIVE_SUBAGENT` / `SEQUENTIAL_FALLBACK`
+- Completion state: `COMPLETED` / `NEEDS_REVISION` / `BLOCKED` / `NEEDS_HUMAN_APPROVAL` / `CANCELLED` / `TIMED_OUT`
 - Summary:
 - Files inspected:
 - Files changed:

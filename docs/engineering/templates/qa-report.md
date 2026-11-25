@@ -4,7 +4,7 @@
 - Engineer:
 - Environment:
 - Acceptance criteria:
-- Gate result:
+- Gate result: `PASS` / `FAIL` / `NOT_APPLICABLE` / `NOT_RUN` / `BLOCKED`
 
 ## Test matrix
 

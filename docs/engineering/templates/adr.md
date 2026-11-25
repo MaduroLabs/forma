@@ -1,10 +1,11 @@
 # ADR: <decision title>
 
-- Status: `PROPOSED` / `ACCEPTED` / `SUPERSEDED` / `REJECTED`
+- Status: `ACCEPTED` / `SUPERSEDED` / `REJECTED`
 - Date:
 - Decision owner:
 - Related RFC:
 - Evidence:
+- Approval record:
 
 ## Decision drivers
 

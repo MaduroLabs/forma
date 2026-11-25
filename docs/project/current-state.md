@@ -5,7 +5,7 @@ This is a compact navigation checkpoint, not a roadmap, issue tracker, Git histo
 ## Current milestone
 
 - Milestone: `A0.2 — Forma Core Engineering Infrastructure Refinement`
-- Status: `READY_FOR_PR`
+- Status: `BLOCKED`
 - Scope: refine Codex engineering infrastructure only; no Forma Core product implementation
 - Branch: `chore/a0-core-agent-infrastructure`
 - Base branch: `main`
@@ -29,9 +29,9 @@ This is a compact navigation checkpoint, not a roadmap, issue tracker, Git histo
 
 - Apply and validate A0.2 refinements. (complete)
 - Obtain independent review. (complete; named-agent selection remains unverified)
-- Commit and push the intended changes.
-- Create or update the pull request targeting `main`.
-- Stop for Project Owner merge approval.
+- Commit and push the intended changes. (complete; `f7156b6` published)
+- Create or update the pull request targeting `main`. (blocked by verified GitHub integration 403)
+- Stop for Project Owner merge approval after PR verification.
 
 ## Pending approvals
 
@@ -55,11 +55,12 @@ This is a compact navigation checkpoint, not a roadmap, issue tracker, Git histo
 
 ## Last verification
 
-- Checkpoint purpose: A0.2 implementation start.
-- Verified local branch and working tree before edits.
-- Verified no existing pull request for `chore/a0-core-agent-infrastructure` through the available GitHub integration.
-- Local GitHub SSH access was unavailable; push and final PR state require later verification.
+- Checkpoint purpose: A0.2 delivery handoff.
+- Commit: `f7156b6e84f850b34d820fc220bad69c0c42b332`.
+- Verified remote feature branch points to `f7156b6`; `origin/main` points to `fd537b9`.
+- Verified no pull request exists for `chore/a0-core-agent-infrastructure`.
+- PR creation returned HTTP 403 `Resource not accessible by integration`; implementation is published but PR creation is externally blocked.
 
 ## Next authorized action
 
-Complete the approved A0.2 refinement, validate it, and prepare the existing A0 branch for its pull request. Do not begin M0.
+Create the pull request through an authorized GitHub-capable route using the comparison URL and supplied title/body, verify its identity and target, then stop for Project Owner review. Do not begin M0.

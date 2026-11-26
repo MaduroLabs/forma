@@ -1,0 +1,5 @@
+# Repository-scoped Codex settings. This file is loaded only when the project is trusted.
+# Keep the parent session's sandbox and approval controls authoritative for all subagents.
+
+[agents]
+max_concurrent_threads_per_session = 4

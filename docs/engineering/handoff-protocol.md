@@ -21,6 +21,8 @@ Every assignment includes:
 - Required verification.
 - Stop conditions.
 
+Security-sensitive assignments additionally record the parent-control preflight: filesystem mode and write scope, credential availability, network and MCP access, external egress, approval policy, and Git-publishing controls. If any required control is unavailable, the assignment is `BLOCKED`.
+
 ## Completion fields
 
 Every completion report includes:
@@ -36,6 +38,8 @@ Every completion report includes:
 - Outstanding risks.
 - Blocking issues.
 - Recommended next action.
+
+Security-sensitive completion reports repeat the parent-control preflight, identify which controls were technically enforced versus instruction-only, and record any required Project Owner risk acceptance.
 
 Partial results may accompany an unsuccessful state but must not be reported as `COMPLETED`. A timeout, cancellation, stale result, duplicate result, or failed retry must remain visible. The coordinator records conflicts and does not silently choose between incompatible recommendations.
 

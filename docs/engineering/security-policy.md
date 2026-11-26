@@ -13,3 +13,9 @@ Security is a quality gate for any feature that executes tools, loads skills, ha
 - Classify findings by severity and include evidence, impact, remediation, and residual risk.
 
 Instruction-only restrictions must be labeled as such. Shared credentials or tools are not technical isolation. Never transmit repository secrets or sensitive data to an external research or inference service without explicit authorization.
+
+## Enforcement boundary and blocking rule
+
+The repository does not provide per-agent operating-system isolation. Parent-controlled sandbox, approval, credential, network, and MCP settings are the enforcement boundary. A role description or skill instruction cannot grant or revoke those capabilities.
+
+For a security-sensitive task, the coordinator must record the available parent controls before delegation. If read-only review isolation, credential scope, egress control, or write ownership cannot be established, the task remains `BLOCKED` until the Project Owner authorizes an adequately controlled route. This is a required stop condition, not a waiver.

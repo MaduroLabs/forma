@@ -6,6 +6,17 @@ Project custom agents inherit the parent session's permissions, provider, and MC
 
 The custom-agent instructions are behavioral boundaries, not operating-system or credential enforcement. All agents sharing the parent session may have the same underlying credentials and tools. This repository does not claim technical isolation that it cannot verify.
 
+## Security-sensitive delegation preflight
+
+Before delegating work that may encounter secrets, untrusted content, filesystem or network access, subprocesses, cloud execution, external tools, or Git publishing, the coordinator must verify the parent controls for that task:
+
+- Review-only work has a read-only filesystem and no child write ownership.
+- Credentials, network access, MCP tools, and external egress are disabled unless explicitly required and authorized.
+- Any required write or external operation has a bounded scope and remains under parent approval control.
+- The child cannot merge, enable auto-merge, alter protection, or publish to `main`.
+
+If these controls cannot be verified, the task is `BLOCKED`; instruction-only role boundaries are not a substitute for technical isolation. Do not silently downgrade a mandatory security gate.
+
 ## Role matrix
 
 | Role class | Intended access | Enforcement status |

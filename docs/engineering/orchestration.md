@@ -6,7 +6,7 @@ The top-level Codex session is the Project Owner-facing coordinator. For substan
 
 Codex project custom agents are standalone TOML files in `.codex/agents/`. Repository skills are discovered under `.agents/skills/`. Project configuration is in `.codex/config.toml` and caps open spawned-agent threads at four.
 
-The verified current Codex CLI is `0.171.0`. Official documentation identifies native `spawn_agent`, `send_input`, `resume_agent`, `wait_agent`, and `close_agent` collaboration tools, and project custom agents under `.codex/agents/`. The local tool surface must still be checked at runtime because tool schemas and feature flags can change.
+The historical A0 validation environment reported Codex CLI `0.171.0`; the A0.3 environment reports `0.159.2`. Official documentation identifies native `spawn_agent`, `send_input`, `resume_agent`, `wait_agent`, and `close_agent` collaboration tools, and project custom agents under `.codex/agents/`. The local tool surface must still be checked at runtime because tool schemas and feature flags can change.
 
 References: [Codex subagents](https://developers.openai.com/codex/subagents), [Codex configuration reference](https://developers.openai.com/codex/config-reference), and [Codex skills](https://developers.openai.com/codex/skills).
 
@@ -28,6 +28,8 @@ References: [Codex subagents](https://developers.openai.com/codex/subagents), [C
 ## Parallel execution
 
 Parallelize independent research and reviews. Serialize implementation when ownership isolation is unavailable. Never let two agents edit the same files concurrently. Parent-mediated communication is the supported coordination pattern; repository handoff artifacts may preserve results between sessions.
+
+Before delegating a security-sensitive task, perform the security-sensitive delegation preflight in `docs/engineering/agent-permissions.md`. If parent sandbox, credential, network, tool, or write ownership controls cannot be verified, record the task as `BLOCKED` rather than relying on behavioral instructions alone.
 
 ## Child lifecycle
 

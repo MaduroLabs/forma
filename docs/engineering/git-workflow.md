@@ -16,6 +16,13 @@ This repository uses trunk-based development. `main` is the protected primary br
 
 Before a commit, inspect `git status`, the complete diff, `git diff --check`, secret-sensitive paths, and applicable validation evidence. Record the base SHA and final commit SHA. Before opening a pull request, confirm the target branch, head branch, existing PR state, intended file list, acceptance criteria, and human approval boundary.
 
+## Delivery evidence semantics
+
+- Record these identities separately: implementation commit, reviewed commit or tree, last verified remote commit, and live branch HEAD.
+- Git and GitHub are authoritative for live branch and pull-request state. A checkpoint is historical evidence and must not be treated as live state.
+- Do not make a bookkeeping commit solely to replace a transient live HEAD or PR-state claim. Report that state from Git or GitHub at delivery time.
+- Do not make a committed document claim the SHA of the commit that would contain that same document. Record the reviewed tree and the verification time or commit instead.
+
 ## Delivery entry point
 
 1. Inspect local and remote state and preserve unrelated changes.
@@ -24,7 +31,7 @@ Before a commit, inspect `git status`, the complete diff, `git diff --check`, se
 4. Run applicable quality gates, inspect the complete diff, and commit only intended changes.
 5. Push the dedicated branch and verify the remote head.
 6. Check for an existing PR before creating one. Never create a duplicate.
-7. Prefer authenticated GitHub CLI or an authorized GitHub integration. If unavailable, provide a comparison URL, complete title/body, head/base branches, commit SHA, and exact manual action.
+7. Prefer authenticated GitHub CLI or an authorized GitHub integration. If unavailable, provide a comparison URL, complete title/body, head/base branches, reviewed implementation identity, validation evidence, known limitations, and exact manual action. Obtain live HEAD separately when delivering the report.
 8. Verify PR identity and target when possible. Do not claim a PR exists without verification.
 9. Stop before merge.
 

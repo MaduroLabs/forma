@@ -5,7 +5,7 @@ This is a compact navigation checkpoint, not a roadmap, issue tracker, Git histo
 ## Current milestone
 
 - Milestone: `A0.2 — Forma Core Engineering Infrastructure Refinement`
-- Status: `BLOCKED`
+- Status: `READY_FOR_PR`
 - Scope: refine Codex engineering infrastructure only; no Forma Core product implementation
 - Branch: `chore/a0-core-agent-infrastructure`
 - Base branch: `main`
@@ -29,8 +29,9 @@ This is a compact navigation checkpoint, not a roadmap, issue tracker, Git histo
 
 - Apply and validate A0.2 refinements. (complete)
 - Obtain independent review. (complete; named-agent selection remains unverified)
-- Commit and push the intended changes. (complete; `f7156b6` published)
-- Create or update the pull request targeting `main`. (blocked by verified GitHub integration 403)
+- A0.3 remediation, fresh review, and evidence recording are complete in the reviewed tree.
+- Commit and push this scoped remediation to the existing A0 branch.
+- Create or update one pull request targeting `main` using the documented fallback, then verify its identity and target.
 - Stop for Project Owner merge approval after PR verification.
 
 ## Pending approvals
@@ -41,7 +42,7 @@ This is a compact navigation checkpoint, not a roadmap, issue tracker, Git histo
 ## Known limitations
 
 - The current runtime may delegate generic native subagents without proving named `.codex/agents/*.toml` selection.
-- Agent instructions are behavioral boundaries; shared credentials and parent tools are not technical role isolation.
+- Agent instructions are behavioral boundaries; shared credentials and parent tools are not technical role isolation. Security-sensitive tasks are blocked when parent isolation cannot be verified.
 - GitHub state is live external state and must not be inferred from this checkpoint.
 - No Cargo tests apply because no Rust product manifest exists.
 
@@ -55,12 +56,15 @@ This is a compact navigation checkpoint, not a roadmap, issue tracker, Git histo
 
 ## Last verification
 
-- Checkpoint purpose: A0.2 delivery handoff.
-- Commit: `f7156b6e84f850b34d820fc220bad69c0c42b332`.
-- Verified remote feature branch points to `f7156b6`; `origin/main` points to `fd537b9`.
+- Checkpoint purpose: A0.3 remediation handoff.
+- Implementation commit: `f7156b6e84f850b34d820fc220bad69c0c42b332`.
+- Reviewed commit/tree: `f1f9d04b53c7e64f60346a7936ef9697dcb79357`.
+- Last verified remote commit recorded by the prior handoff: `f1f9d04b53c7e64f60346a7936ef9697dcb79357` (historical).
+- Live branch HEAD: authoritative Git/GitHub state; obtain separately at delivery and do not chase it with bookkeeping commits.
+- Base branch last verified by the prior handoff: `fd537b9bacc8c3973f567078d26fcd20b236b229`.
 - Verified no pull request exists for `chore/a0-core-agent-infrastructure`.
 - PR creation returned HTTP 403 `Resource not accessible by integration`; implementation is published but PR creation is externally blocked.
 
 ## Next authorized action
 
-Create the pull request through an authorized GitHub-capable route using the comparison URL and supplied title/body, verify its identity and target, then stop for Project Owner review. Do not begin M0.
+Commit and push the scoped A0.3 remediation to the existing branch, then create the pull request through an authorized GitHub-capable route or use [`docs/milestones/evidence/A0.2/pr-fallback.md`](../milestones/evidence/A0.2/pr-fallback.md). Obtain live HEAD separately, verify PR identity and target, then stop for Project Owner review. Do not begin M0.
